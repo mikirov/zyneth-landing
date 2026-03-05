@@ -11,7 +11,8 @@ watchPatterns = [
 
 [deploy]
 numReplicas = 1
-healthcheckPath = "/health"
+healthcheckPath = "/ready"
+healthcheckTimeout = 172800
 restartPolicyType = "ALWAYS"
 restartPolicyMaxRetries = 10
 region = "europe-west4"

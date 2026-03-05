@@ -13,7 +13,7 @@ ARG DATABASE_URL
 ENV DATABASE_URL=$DATABASE_URL
 ARG PONDER_RPC_URL_11155111
 ENV PONDER_RPC_URL_11155111=$PONDER_RPC_URL_11155111
+ARG PORT
+ENV PORT=$PORT
 
-EXPOSE 42069
-
-CMD ["bun", "run", "--cwd", "apis/ponder", "start"]
+CMD bun run --cwd apis/ponder start -- --hostname 0.0.0.0 --port $PORT
